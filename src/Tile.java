@@ -25,7 +25,7 @@ public class Tile extends JButton{
 		super.setIcon(img1); 
 		super.setBackground(color);
 	}
-	
+	//i think the background and the stamps go in here
 	public Tile(String fileName, int row, int col) {
 		this(fileName);		
 		r = row;
