@@ -43,6 +43,7 @@ public class MainPanel implements MouseListener  {
 				
 				
 				//drawing for background goes here?
+				//also the dino stamps
 			}
 		}
 		
