@@ -40,10 +40,6 @@ public class MainPanel implements MouseListener  {
 				
 				//add mouse listener for each tile
 				tiles[r][c].addMouseListener(this);
-				
-				
-				//drawing for background goes here?
-				//also the dino stamps
 			}
 		}
 		
