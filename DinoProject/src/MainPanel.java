@@ -18,7 +18,7 @@ public class MainPanel implements MouseListener  {
 	public MainPanel() {
 		
 		//Create a JFrame Object with a title bar text
-		JFrame f = new JFrame("JButtons and GridLayout");
+		JFrame f = new JFrame("Dino Game");
 		
 		//Set the size of the window
 		f.setSize(800,800); //width and height
