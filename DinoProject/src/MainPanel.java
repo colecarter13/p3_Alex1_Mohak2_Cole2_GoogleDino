@@ -12,12 +12,15 @@ import javax.swing.Timer;
 public class MainPanel extends JPanel implements ActionListener, KeyListener{
 	//handles drawing animation
 	Timer animationTimer; 
-	
+	Background daBack = new Background();
+	Dino bigDog = new Dino();
+	Dino littleDog = new Dino(257);
 	
 	public void paint(Graphics g) {
 		//calling this line ensures the frame is redrawn
 		super.paintComponent(g);
-		
+		daBack.paint(g);
+		bigDog.paint(g);
 		//call paint methods of objects or through g.drawRect etc
 	
 		
@@ -75,14 +78,14 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 		
 		
 		switch(arg0.getKeyCode()) {
-		//if keycode is 'd' key
-		case 68:
-			
+		//if keycode is 'space' key
+		case 32:
+			bigDog.moveUp();
 			break;
-			
-		case 65:
-			System.out.println("stuff for left key using a");
+		case 38:
+			bigDog.moveUp();
 			break;
+		
 			
 		}
 		
