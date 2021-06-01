@@ -12,12 +12,16 @@ public class Obstacles {
  private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
  private int acc;
  private int coin;
+ private int yep;
  
  public Obstacles() {
 	 coin = (int) (Math.random()* 2) + 1;
 	 System.out.println(coin);
 	 if(coin > 1) {
 		 img = getImage("unnamed.png"); 
+	 }else {
+		 //img1 = getImage(second cactus image);
+		 
 	 }
 	 
 	 init(x, y);
