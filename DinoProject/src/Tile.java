@@ -26,6 +26,8 @@ public class Tile extends JButton{
 		super.setBackground(color);
 	}
 	
+	
+	//the code for repeating the background image frame goes here
 	public Tile(String fileName, int row, int col) {
 		this(fileName);		
 		r = row;
