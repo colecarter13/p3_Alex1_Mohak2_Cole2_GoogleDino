@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -9,17 +10,30 @@ import java.net.URL;
 public class Dino {
 	private int x = 15, y = 257; //location
 	private int width;
-	private int acc = 1;
+	private double acc = 0.3;
 	private Image img;
 	private Image img2;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
+	private boolean ready = true;
 	
-	private int vx = 0, vy = 0; //velocity values
+	private double vx = 0, vy = 0; //velocity values
 	
 	public Dino(int pY) {
 		img2 = getImage("duxkingDino.png");
 		y = pY;
 		init(x,y);
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public void setReady(boolean yep) {
+		ready = yep;
 	}
 	
 	public Dino() {
@@ -35,8 +49,10 @@ public class Dino {
 		y += vy;
 		if(y <= 177 ) {
 			vy += acc;
+			ready = false;
 		}else if(y > 257) {
 			vy = 0;
+			ready = true;
 		}
 		    
 		
@@ -62,7 +78,10 @@ public class Dino {
 
 	
 	public void moveUp() {
-		vy = -3;
+		if(ready) {
+			vy = -3;
+		}
+		
 	}
 	
 	public void stop() {

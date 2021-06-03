@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.ArrayList;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,12 +16,18 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 	Background daBack = new Background();
 	Dino bigDog = new Dino();
 	Dino littleDog = new Dino(257);
+	Obstacles newObs = new Obstacles(700, false);
+	Obstacles doubleObs = new Obstacles(350, true);
 	
 	public void paint(Graphics g) {
 		//calling this line ensures the frame is redrawn
 		super.paintComponent(g);
 		daBack.paint(g);
 		bigDog.paint(g);
+		newObs.paint(g);
+		doubleObs.paint(g);
+		
+		
 		//call paint methods of objects or through g.drawRect etc
 	
 		
@@ -81,6 +88,7 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 		//if keycode is 'space' key
 		case 32:
 			bigDog.moveUp();
+			bigDog.setReady(false);
 			break;
 		case 38:
 			bigDog.moveUp();
