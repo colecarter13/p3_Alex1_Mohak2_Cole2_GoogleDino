@@ -10,7 +10,7 @@ import java.net.URL;
 public class Dino {
 	private int x = 15, y = 257; //location
 	private int width;
-	private double acc = 0.3;
+	private double acc = 0.5;
 	private Image img;
 	private Image img2;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);

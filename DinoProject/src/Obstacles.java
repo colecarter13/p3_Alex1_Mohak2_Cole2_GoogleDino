@@ -21,20 +21,32 @@ public class Obstacles {
  private int yep;
  public ArrayList<Obstacles> ObsList = new ArrayList<Obstacles>();
  
- public Obstacles(int pX, boolean pDouble) {
+ public Obstacles(int pX, boolean pDouble, int pY) {
 	 coin = (int) (Math.random()* 2) + 1;
 	 System.out.println(coin);
+	 x = pX;
+	 y = pY;
 	 if(!pDouble) {
 	   img = getImage("unnamed.png"); 
+	   init(x, y);
 	 }
 	
 	
 	if(pDouble) {
-		img1 = getImage("cacti.png");
+		img = getImage("cacti.png");
+		init(x, y);
 	}
-	 x = pX;
-	 init(x, y);
 	 
+	 
+	 
+ }
+ 
+ public void setX (int pX) {
+	 x = pX;
+ }
+ 
+ public int getX() {
+	 return x;
  }
  
  
@@ -45,10 +57,7 @@ public class Obstacles {
 		tx.setToTranslation(x,y);
 		
 		x += vx;
-		 if(x <= 0) {
-			 x = 750;
-		 }
-		    
+		
 		
 	}
  

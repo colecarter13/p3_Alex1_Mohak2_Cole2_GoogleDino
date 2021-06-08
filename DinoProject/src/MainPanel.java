@@ -16,8 +16,8 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 	Background daBack = new Background();
 	Dino bigDog = new Dino();
 	Dino littleDog = new Dino(257);
-	Obstacles newObs = new Obstacles(700, false);
-	Obstacles doubleObs = new Obstacles(350, true);
+	Obstacles newObs = new Obstacles(700, false, 280);
+	Obstacles doubleObs = new Obstacles(1050, true, 260);
 	
 	public void paint(Graphics g) {
 		//calling this line ensures the frame is redrawn
@@ -27,9 +27,20 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 		newObs.paint(g);
 		doubleObs.paint(g);
 		
+		if(doubleObs.getX() < -200) {
+			doubleObs.setX(750);	
+		}
+		if(newObs.getX() < - 100) {
+			newObs.setX(850);
+		}
+		
 		
 		//call paint methods of objects or through g.drawRect etc
 	
+		
+	}
+	
+	public void collide() {
 		
 	}
 	
