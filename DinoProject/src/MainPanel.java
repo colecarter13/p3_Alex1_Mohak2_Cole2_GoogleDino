@@ -41,7 +41,9 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void collide() {
-		
+		if(newObs.getX() <= bigDog.getX() || doubleObs.getX() <= bigDog.getX()) {
+			System.out.println("You Lost");
+		}
 	}
 	
 	/* constructor for MainPain class */
